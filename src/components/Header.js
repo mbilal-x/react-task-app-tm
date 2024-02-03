@@ -1,0 +1,22 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+
+function Header({ onAdd, showAddTask , title}) {
+  return (
+    <div className='header'>
+      <h2 style={{ color: "red", fontSize: 30}}
+        >{title}</h2>
+        <button className='btn' style={{backgroundColor: !showAddTask ? "green": "red" }} onClick={onAdd}>{!showAddTask ? 'Add' : 'Close'}</button>
+    </div>
+  )
+}
+
+Header.defaultProps = {
+  title: 'Task Tracker',
+}
+
+Header.propTypes = {
+  title: PropTypes.string.isRequired,
+}
+
+export default Header

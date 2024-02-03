@@ -1,0 +1,22 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "text": "shopping for groceries",
+      "time": "sunday",
+      "reminder": false
+    },
+    {
+      "id": "2",
+      "text": "Vacation to Dubai",
+      "time": "New Year",
+      "reminder": true
+    },
+    {
+      "id": "3",
+      "text": "doing my laundry",
+      "time": "today",
+      "reminder": false
+    }
+  ]
+}
