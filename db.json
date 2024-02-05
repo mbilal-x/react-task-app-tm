@@ -17,6 +17,18 @@
       "text": "doing my laundry",
       "time": "today",
       "reminder": false
+    },
+    {
+      "id": "aef0",
+      "text": "Learn React js",
+      "time": "Right now with focus ",
+      "reminder": true
+    },
+    {
+      "id": "b3c6",
+      "text": "No Social Media except by plan",
+      "time": "All year every day",
+      "reminder": false
     }
   ]
 }

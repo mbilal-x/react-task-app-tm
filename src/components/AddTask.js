@@ -4,7 +4,7 @@ function AddTask({ onAdd }) {
 
   const [text, setText] = useState("");
   const [time, setTime] = useState("");
-  const [reminder, setReminder] = useState(true);
+  const [reminder, setReminder] = useState(false);
 
   const onSubmit = (e) => {
     e.preventDefault();

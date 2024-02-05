@@ -3,6 +3,9 @@ import Header from './components/Header';
 import Tasks from './/components/Tasks';
 import AddTask from './/components/AddTask';
 import { useEffect, useState } from 'react';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Footer from './components/Footer';
+import About from './components/About';
 
 
 
@@ -16,7 +19,7 @@ function App() {
     // getting the data into state 
     const getTasks = async () => {
       const tasksFromServer = await fetchTasks()
-      console.log(tasksFromServer)
+      // console.log(tasksFromServer)
       setTasks(tasksFromServer)
     }
 
@@ -86,33 +89,30 @@ const delTask = async (id) => {
   }
 
   return (
-    <div className="App container">
+    <Router>
+      <div className="App container">
       <Header title="Task Tracker" onAdd={()=> setShowAddTask(!showAddTask)} showAddTask={showAddTask}/>
-      {showAddTask && <AddTask onAdd={addTask} />}
-      <Tasks tasks={tasks} onDel={delTask} onToggle={onToggle}/>
       
+      <Routes>
+        
+      <Route path='/'
+      exact
+      element={(
+        <>
+        {showAddTask && <AddTask onAdd={addTask} />}
+        <Tasks tasks={tasks} onDel={delTask} onToggle={onToggle}/>
+        </>
+      )}
+      />
+      <Route path='/about' Component={About} />
+      </Routes>
 
-      {/* _______________________________
-      header component
-        Appheading Addbutton
-      addTask component
-        form 
-          inputs 
-            title
-            dat and time
-            reminderCheckbox
-          saveTaskButton
-      Tasks component
-        div of task
-          heading
-          time
-          deleteIcon
-      footer component 
-        copyrights 
-        about route
-      */}
+      <Footer />
     </div>
+    </Router>
   );
 }
 
 export default App;
+
+
